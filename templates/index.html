@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../static/style/style.css" />
     <title>Title</title>
-</head>
-<body>
-    <h1>bạN MUốN TyPe Giống KhÁ BảNh ?</h1>
-    <form method="post">
-        <label for="text">Điền vào đây </label>
-        <input name="text">
-        <input type="submit" value="Lên">
-    </form>
+  </head>
+  <body>
+    <div class="khaBanhBox">
+      <div class="videoContainer">
+        <video autoplay muted loop id="myVideo">
+          <source src="../static/assets/bgVideo.mp4" type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
 
-    <div class="console">
-        <h2>Result: </h2>
-        <div class="container">
-            {{ msg }}
+      <div class="khaBanhBox__content">
+        <h1>bạN MUốN TyPe Giống KhÁ BảNh ?</h1>
+        <form method="post">
+          <label for="text">Điền vào đây </label>
+          <input name="text" />
+          <input id="sendText" type="submit" value="Lên" />
+        </form>
+
+        <div class="console">
+          <h2>Result:</h2>
+          <div class="container">{{ msg }}</div>
+          <button id="copyWord">Copy</button>
         </div>
+      </div>
     </div>
+  </body>
 
-</body>
+  <script>
+    const btnCopy = document.querySelector("#copyWord");
+
+    btnCopy.addEventListener("click", () => {
+      const text = document.querySelector(".container");
+
+      navigator.clipboard.writeText(text.textContent);
+
+      alert("Copied the text: " + text.textContent);
+    });
+  </script>
 </html>
