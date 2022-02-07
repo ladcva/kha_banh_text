@@ -34,10 +34,10 @@
   <script>
     const btnCopy = document.querySelector("#copyWord");
 
-    btnCopy.addEventListener("click", () => {
+    btnCopy.addEventListener("click", async () => {
       const text = document.querySelector(".container");
 
-      navigator.clipboard.writeText(text.textContent);
+      await navigator.clipboard.writeText(text.textContent);
 
       alert("Copied the text: " + text.textContent);
     });
