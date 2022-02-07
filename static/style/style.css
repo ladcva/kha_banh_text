@@ -28,37 +28,26 @@
   width: 800px;
 }
 
-@media (max-width: 800px) {
+@media only screen and (max-device-width: 800px) {
   .khaBanhBox .khaBanhBox__content {
     max-width: 700px;
-    /* height: 50%; */
   }
 }
-@media (max-width: 700px) {
+
+@media only screen and (max-device-width: 700px) {
   .khaBanhBox .khaBanhBox__content {
-    width: 95%;
-    height: 50%;
+    max-width: 98%;
+    /* height: 50vh; */
     margin: 0 auto;
   }
 
   .khaBanhBox h1 {
-    font-size: 25px;
+    font-size: 30px;
   }
 
   .khaBanhBox .container {
     font-size: 20px;
   }
-}
-.khaBanhBox h1 {
-  text-align: center;
-}
-.khaBanhBox form label {
-  font-size: 24px;
-}
-
-.khaBanhBox .console {
-  display: flex;
-  align-items: center;
 }
 
 .khaBanhBox .container {
