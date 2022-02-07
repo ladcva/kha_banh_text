@@ -33,7 +33,7 @@ def save_to_mysql_database(text, ip):
 def index():  # put application's code here
     if request.method == 'POST':
         text = request.form["text"]
-        guest_ip = request.environ['REMOTE_ADDR']
+        guest_ip = request.environ.get('REMOTE_ADDR')
         save_to_mysql_database(text, guest_ip)
 
         return render_template('index.html', msg=transform(text))
